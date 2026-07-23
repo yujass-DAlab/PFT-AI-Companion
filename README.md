@@ -84,7 +84,7 @@ The application evaluates the user's **Explosive Start (Amplitude)**, **Duration
    python app_v2.py
    ```
 
-4. **Open your browser** and go to: `http://127.0.0.1:7862` (or the port shown in the terminal).
+4. **Open your browser** and go to: `http://127.0.0.1:7860` (or the port shown in the terminal).
 
 ---
 
