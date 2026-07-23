@@ -84,7 +84,7 @@ The application evaluates the user's **Explosive Start (Amplitude)**, **Duration
    python app_v2.py
    ```
 
-4. **Open your browser** and go to: `http://127.0.0.1:7860` (or the port shown in the terminal).
+4. **Open your browser** and go to: `http://127.0.0.1:7860` (or http://52.15.208.206:7860).
 
 ---
 
@@ -165,6 +165,9 @@ Special thanks to the open-source community for:
 <img width="700" height="600" alt="v2FChooseExperience" src="https://github.com/user-attachments/assets/a4708d90-a0db-4466-a29b-747dca2b357f" />
 
 <img width="700" height="600" alt="v2FBackground" src="https://github.com/user-attachments/assets/e0b74cdc-807b-4975-ad41-e59b5094b663" />
+
+AWS Projects Side by Side:
+<img width="1899" height="1010" alt="AWS2Projects" src="https://github.com/user-attachments/assets/d258b379-d06b-48ac-aa41-83e748d3191e" />
 
 
 ---
