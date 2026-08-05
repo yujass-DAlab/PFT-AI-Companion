@@ -18,3 +18,9 @@ spirometry_v41.py
 spirometry_v42.py
 spirometry_v3_retired.py
 *.png
+app_v*.py
+spirometry_v*.py
+!spirometry_v3.py
+app_v*.py
+spirometry_v*.py
+!spirometry_v3.py
