@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 gradio>=5.0.0
 
 numpy>=2.0.0
@@ -9,3 +10,9 @@ scipy>=1.14.0
 plotly==6.9.0
 
 gTTS
+=======
+gradio==5.0.0
+numpy==1.26.4
+scipy==1.17.1
+pyttsx3==2.90
+>>>>>>> 6dd8f4721f35fe2e13a5f20821db82e0e2ba220b
