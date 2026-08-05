@@ -1,6 +1,6 @@
 # 🫁 PFT AI Companion (V3)
 
-### *Unified Spirometry Coaching & Preparation Tool – Now Live on AWS!*
+### *A Patient‑Centered Spirometry Coaching & Preparation Tool*
 
 [![Python 3.11](https://img.shields.io/badge/Python-3.11-blue.svg)](https://www.python.org/)
 [![Gradio](https://img.shields.io/badge/Gradio-5.0-green.svg)](https://gradio.app/)
@@ -12,16 +12,16 @@
 
 ## 🚀 Live Demo
 
-**Try the V3 app right now:**  
+**Try the app right now:**  
 👉 [http://3.15.171.219:7863](http://3.15.171.219:7863)
 
-*Note: The microphone works on `localhost` (HTTPS required for public IPs). All other features – audio coaching, scoring, bar charts – work flawlessly on the cloud.*
+*(Microphone requires HTTPS – full functionality works on localhost. All other features work flawlessly on AWS).*
 
 ---
 
 ## 📖 Overview
 
-The **PFT AI Companion V3** is a **unified, single‑page** application that combines Practice and Live test modes into one clean interface. It uses real‑time audio analysis and **cloud‑compatible Text‑to‑Speech (gTTS)** to guide users through the three critical steps of a spirometry maneuver:
+The **PFT AI Companion V3** is a **unified, single‑page application** designed to help patients practice and prepare for Pulmonary Function Tests (Spirometry). It combines **Practice** and **Live Test** modes into one clean interface, using real‑time audio analysis and cloud‑compatible Text‑to‑Speech to guide users through the critical steps of a spirometry maneuver:
 
 1. **🌬️ Breathe In Deeply** – Maximise inhalation.
 2. **💨 Blast Out** – Forceful, explosive exhalation.
@@ -64,10 +64,105 @@ The app evaluates **Explosive Start (amplitude)**, **Duration**, and **Airflow S
 ### Prerequisites
 - Python 3.11+ installed.
 - Working microphone.
-- (Optional) Docker for containerised deployment.
 
 ### Steps
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/yujass-DAlab/PFT-AI-Companion.git
    cd PFT-AI-Companion
+   
+2. Install dependencies:
+bash
+pip install -r requirements.txt
+
+4. Run the application:
+bash
+python spirometry_v3.py
+Open your browser and go to: http://127.0.0.1:7863.
+
+📁 Project Structure
+V3 is a single‑file application – all logic is contained in spirometry_v3.py.
+The repository also includes:
+
+text
+PFT-AI-Companion/
+├── spirometry_v3.py       # Main application (unified single page)
+├── requirements.txt       # Python dependencies
+├── Dockerfile             # Container build instructions
+├── .dockerignore          # Files to exclude from the Docker image
+└── README.md              # This file
+
+👩‍⚕️ User Flow
+Choose a mode (Practice or Live) – the coach voice plays automatically.
+
+Click the Record button (start/stop toggle) – blow when you hear "BLAST out!".
+
+Score appears instantly – gauge, bar chart, and detailed summary update.
+
+Continue – in Live mode, the app tracks attempts and auto‑finishes after 3 passing blows (≥80%) or 8 total attempts.
+
+🧠 The Journey: From V1 to V3
+Version	Focus	Key Change
+V1	Single‑page prototype	Basic audio analysis + pyttsx3 TTS (Windows only).
+V2	Modular architecture	Split UI (pages/) and logic (utils/). Added Live mode and therapist button.
+V3	Unified single page	Removed pages/ and utils/ – everything in one file. Switched to gTTS for cloud compatibility. Added Plotly charts, fixed Y‑axis, and added a passing line. Deployed to AWS.
+
+⚠️ Limitations
+Microphone requires HTTPS – on public IPs, the mic will not work over HTTP. All other features (coaching, scoring, charts) work perfectly.
+
+Surrogate metrics only – the app measures audio amplitude and duration, not calibrated flow/volume (FEV₁, FVC).
+
+No clinical validation – this is a coaching tool, not a diagnostic device.
+
+Dependency on internet – gTTS needs an active internet connection to generate voice prompts.
+
+🔮 Future Developments (V4+)
+HTTPS + SSL – Add a free Let's Encrypt certificate to enable microphone on AWS.
+
+Real‑time Flow‑Volume loop – visualise your breath as you blow.
+
+Session history storage – save attempts to a database and generate PDF reports.
+
+Multi‑language support – Spanish, Mandarin, etc.
+
+🙏 Acknowledgments
+This project was developed with technical guidance from AI language models, including ChatGPT and DeepSeek. Their contributions assisted in code structuring, debugging, modular design, and patient‑friendly prompt engineering.
+
+Special thanks to the open‑source community for:
+
+Gradio – for the intuitive web UI framework.
+
+gTTS – for cloud‑compatible Text‑to‑Speech.
+
+Plotly – for beautiful, interactive charts.
+
+SciPy & NumPy – for audio signal processing.
+
+📄 License
+This project is licensed under the MIT License – see the LICENSE file for details.
+
+Built with ❤️ for patient empowerment in respiratory health.
+---
+
+## 📸 Screenshots
+
+### 🖥️ Unified Interface (V3)
+The new single‑page layout puts everything – Practice/Live modes, scoring, and history – on one screen, reducing clutter and making navigation intuitive.
+
+![<img width="713" height="921" alt="v3overall" src="https://github.com/user-attachments/assets/4b09ba91-b809-4da2-a6a6-80b435ab6644" />
+
+---
+
+### 📊 Interactive Dashboard
+The Performance Dashboard includes a colour‑coded gauge, a Plotly bar chart with a fixed 0–100 Y‑axis, and a passing line at 80%.
+
+![<img width="671" height="764" alt="v3blank" src="https://github.com/user-attachments/assets/5130c6a8-f7e4-4315-971c-a439d8c62365" />
+
+---
+
+### ☁️ AWS Deployment
+The app is containerised with Docker and deployed on AWS EC2 – accessible from anywhere.
+
+!<img width="1868" height="1027" alt="AWS-2-App" src="https://github.com/user-attachments/assets/c216ff84-2e4a-4325-911d-ee5e661b0413" />
+
+
