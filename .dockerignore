@@ -1,0 +1,40 @@
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+env/
+.venv/
+ENV/
+
+# Git files
+.git/
+.gitignore
+
+# Environment variables (secrets)
+.env
+
+# Docker files (don't copy them into the container)
+Dockerfile
+.dockerignore
+
+# Documentation
+README.md
+*.md
+
+# IDE settings (if you use VSCode or PyCharm)
+.vscode/
+.idea/
+
+# Local testing files (keep these out of the image)
+temp/
+*.tmp
+*.log
+*.wav
+*.mp3
+
+# Gradio temporary files (saved recordings)
+gradio/

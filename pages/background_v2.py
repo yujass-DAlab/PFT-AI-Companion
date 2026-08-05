@@ -41,21 +41,17 @@ Remember:
 The respiratory therapist is there to coach you throughout the procedure on demand and answer any questions you may have.
 """
 
+# --- ALPHABETICAL ABBREVIATIONS (A-Z) ---
 ABBREVIATIONS = """
 # 📖 Common Terms You May Hear
 
-### 🫁 PFT
-**Pulmonary Function Test** – A group of breathing tests that evaluate overall lung function.
+### 💊 Bronchodilator
+Sometimes your healthcare provider may order breathing tests before and/or after using an inhaled medication to determine how your lungs respond to the medicine and determine the severity of issues in your lungs.
 
 ---
 
-### 🫁 Spirometry
-Measures how much air you can breathe in and out and how quickly you can exhale. This part of the examination focuses on how deeply and forcefully you can exhale. My core purpose is to help you become comfortable with this part and making you more prepared.
-
----
-
-### 💨 FVC
-**Forced Vital Capacity** – The total amount of air you can forcefully blast out after taking the deepest breath possible.
+### 🌬️ DLCO
+**Diffusing Capacity of the Lung for Carbon Monoxide** – Measures how efficiently gases move from the air sacs of your lungs into your bloodstream. Although the test uses a very tiny, safe amount of carbon monoxide for measurement purposes, it helps estimate how effectively oxygen would normally transfer into your blood.
 
 ---
 
@@ -69,26 +65,34 @@ A comparison between FEV₁ and FVC. This helps doctors determine whether airflo
 
 ---
 
+### 💨 FVC
+**Forced Vital Capacity** – The total amount of air you can forcefully blast out after taking the deepest breath possible.
+
+---
+
+### 🫁 PFT
+**Pulmonary Function Test** – A group of breathing tests that evaluate overall lung function.
+
+---
+
+### 🫁 Spirometry
+Measures how much air you can breathe in and out and how quickly you can exhale. This part of the examination focuses on how deeply and forcefully you can exhale. My core purpose is to help you become comfortable with this part and making you more prepared.
+
+---
+
 ### 🫁 Lung Volumes & TLC
 Your lungs hold air in different "compartments." Think of it like a set of measuring cups:
-Tidal Volume: The air you breathe in and out with a normal, relaxed breath.
-Inspiratory Reserve: The extra air you can pull in after a normal breath in.
-Expiratory Reserve: The extra air you can push out after a normal breath out.
-Residual Volume: The air that always stays in your lungs (you cannot exhale this).
-When you add these volumes together, they form Total Lung Capacities(TLC)—the grand total of air your lungs can hold. This is one of the most important numbers in your PFT report, helping your doctor understand if your lungs are expanding fully or if air is getting trapped.
----
 
-### 🌬️ DLCO
-**Diffusing Capacity of the Lung for Carbon Monoxide** – Measures how efficiently gases move from the air sacs of your lungs into your bloodstream. Although the test uses a very tiny, safe amount of carbon monoxide for measurement purposes, it helps estimate how effectively oxygen would normally transfer into your blood.
+- **Tidal Volume:** The air you breathe in and out with a normal, relaxed breath.
+- **Inspiratory Reserve:** The extra air you can pull in after a normal breath in.
+- **Expiratory Reserve:** The extra air you can push out after a normal breath out.
+- **Residual Volume:** The air that always stays in your lungs (you cannot exhale this).
 
----
-
-### 💊 Bronchodilator
-Sometimes your healthcare provider may order breathing tests before and/or after using an inhaled medication to determine how your lungs respond to the medicine and determine the severity of issues in your lungs.
+When you add all four of these volumes together, you get your **Total Lung Capacity (TLC)**—the grand total of air your lungs can hold. This is one of the most important numbers in your PFT report, helping your doctor understand if your lungs are expanding fully or if air is getting trapped.
 """
 
 TIPS = """
-# 💡 Helpful Tips
+# ⭐ Before We Begin
 
 ✔ Listen carefully to your respiratory therapist or my instructions.
 
