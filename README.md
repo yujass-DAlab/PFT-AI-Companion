@@ -178,21 +178,13 @@ Built with ❤️ for patient empowerment in respiratory health.
 
 ### 🖥️ Unified Interface (V4)
 The new single‑page layout puts everything – Practice/Live modes, scoring, and history – on one screen, reducing clutter and making navigation intuitive.
-
-![<img width="713" height="921" alt="v3overall" src="https://github.com/user-attachments/assets/4b09ba91-b809-4da2-a6a6-80b435ab6644" />
-
-
----
-
 ### 📊 Interactive Dashboard
 The Performance Dashboard includes a colour‑coded gauge, a Plotly bar chart with a fixed 0–100 Y‑axis, and a passing line at 80%.
-
-![<img width="671" height="764" alt="v3blank" src="https://github.com/user-attachments/assets/5130c6a8-f7e4-4315-971c-a439d8c62365" />
+![<img width="731" height="923" alt="v4_final" src="https://github.com/user-attachments/assets/8366769b-72fe-459d-b2d5-14fef2589491" />
 
 ---
 
 ### ☁️ AWS Deployment
 The app is containerised with Docker and deployed on AWS EC2 – accessible from anywhere.
-
-!<img width="1868" height="1027" alt="AWS-2-App" src="https://github.com/user-attachments/assets/c216ff84-2e4a-4325-911d-ee5e661b0413" />
+!<<img width="688" height="920" alt="URL18 225 32 182 7864" src="https://github.com/user-attachments/assets/5796c041-30a8-40f3-ae6f-33c21dcdc223" />
 
