@@ -152,10 +152,12 @@ Built with ❤️ for patient empowerment in respiratory health.
 Screenshots
 Unified Interface (V4)
 The new single-page layout puts everything – Practice/Live modes, scoring, and history – on one screen.
+<img width="731" height="923" alt="v4_final" src="https://github.com/user-attachments/assets/9f1ede8e-d050-40c1-a676-f3fe4fcd8be7" />
 
-<img width="731" height="923" alt="v4_final" src="https://github.com/user-attachments/assets//afe8fa24-00b9-419e-bc8f-ba185296c801">
+
 
 AWS Deployment
 The app is containerized with Docker and deployed on AWS EC2.
+<img width="688" height="920" alt="URL18 225 32 182 7864" src="https://github.com/user-attachments/assets/a48cdcab-5ed4-4310-bdb7-20f828de0b34" />
 
-<img width="688" height="920" alt="URL18_225_32_182_7864" src="https://github.com/user-attachments/assets/489ecb91-fd68-4bba-9e26-6940288334ac"> ```
+ ```
