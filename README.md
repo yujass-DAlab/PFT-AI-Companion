@@ -149,15 +149,16 @@ MIT License – see the LICENSE file for details.
 
 Built with ❤️ for patient empowerment in respiratory health.
 
-Screenshots
-Unified Interface (V4)
+## Screenshots
+### Unified Interface (V4)
+
 The new single-page layout puts everything – Practice/Live modes, scoring, and history – on one screen.
-<img width="731" height="923" alt="v4_final" src="https://github.com/user-attachments/assets/add82c21-2e67-4eb9-b7dc-16b29c5b244f">
 
+![V4 Unified Interface](https://github.com/user-attachments/assets/52153d90-8c37-4de8-b613-86daaf8a295a)
 
+### AWS Deployment
 
-AWS Deployment
 The app is containerized with Docker and deployed on AWS EC2.
-<img width="688" height="920" alt="URL18 225 32 182 7864" src="https://github.com/user-attachments/assets/1bf32153-c0d8-45c6-9cf4-a7d807b98653">
 
+![AWS Deployment](https://github.com/user-attachments/assets/5763b6d9-50eb-414d-8737-b761232d460f")
 
