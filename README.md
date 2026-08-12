@@ -181,11 +181,12 @@ The new single‑page layout puts everything – Practice/Live modes, scoring, a
 
 ### 📊 Interactive Dashboard
 The Performance Dashboard includes a colour‑coded gauge, a Plotly bar chart with a fixed 0–100 Y‑axis, and a passing line at 80%.
-![v4_final](https://github.com/user-attachments/assets/2e7c04de-c5b1-4061-9baf-6203cd1681ec)
+<img width="731" height="923" alt="v4_final" src="https://github.com/user-attachments/assets/7bd99611-23b4-41dd-8c9a-74587efccf90" />
 
 
 ---
 
 ### ☁️ AWS Deployment
 The app is containerized with Docker and deployed on AWS EC2 – accessible from anywhere.
-![v4_final](https://github.com/user-attachments/assets/98ffc2a0-754c-4282-b1d6-9c41a04a18bf)
+<img width="688" height="920" alt="URL18 225 32 182 7864" src="https://github.com/user-attachments/assets/a6153289-c416-4949-a3ae-db7607d1ff40" />
+
