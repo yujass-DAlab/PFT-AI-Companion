@@ -172,21 +172,20 @@ SciPy & NumPy – for audio signal processing.
 This project is licensed under the MIT License – see the LICENSE file for details.
 
 Built with ❤️ for patient empowerment in respiratory health.
----
 
-## 📸 Screenshots
+## Screenshots
 
-### 🖥️ Unified Interface (V4)
-The new single‑page layout puts everything – Practice/Live modes, scoring, and history – on one screen, reducing clutter and making navigation intuitive.
+### Unified Interface (V4)
+The new single-page layout puts everything - Practice/Live modes, scoring, and history - on one screen.
 
-### 📊 Interactive Dashboard
-The Performance Dashboard includes a colour‑coded gauge, a Plotly bar chart with a fixed 0–100 Y‑axis, and a passing line at 80%.
-<img width="731" height="923" alt="v4_final" src="https://github.com/user-attachments/assets/7bd99611-23b4-41dd-8c9a-74587efccf90" />
-
+<img width="731" height="923" alt="v4_final" src="https://github.com/user-attachments/assets/6571f74b-7d1a-4ba1-bebd-5c53a5c9b539">
 
 ---
 
-### ☁️ AWS Deployment
-The app is containerized with Docker and deployed on AWS EC2 – accessible from anywhere.
-<img width="688" height="920" alt="URL18 225 32 182 7864" src="https://github.com/user-attachments/assets/a6153289-c416-4949-a3ae-db7607d1ff40" />
+### AWS Deployment
+The app is containerized with Docker and deployed on AWS EC2.
+
+<img width="688" height="920" alt="URL18 225 32 182 7864" src="https://github.com/user-attachments/assets/1fde5b07-6a16-4f6c-85c1-5c02d260f77d">
+
+---
 
