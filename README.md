@@ -187,5 +187,5 @@ The app is containerized with Docker and deployed on AWS EC2.
 
 <img width="688" height="920" alt="URL18 225 32 182 7864" src="https://github.com/user-attachments/assets/1fde5b07-6a16-4f6c-85c1-5c02d260f77d">
 
----
+
 
