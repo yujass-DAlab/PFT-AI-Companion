@@ -79,19 +79,17 @@ pip install -r requirements.txt
 
 # 3. Run the app
 python spirometry_v4_pwa.py
-Open your browser at http://127.0.0.1:7864
+Open your browser at http://127.0.0.1:7864.
 
 🐳 Run with Docker
-bash
 docker build -t spirometry-pwa .
 docker run -d -p 7864:7863 --name spirometry-app -e PYTHONUNBUFFERED=1 spirometry-pwa
+
 ☁️ AWS Deployment
 Live URL: http://18.225.32.182:7864
-
-The app is containerised and deployed on AWS EC2 using Amazon ECR. See the Dockerfile for details.
+The app is containerized and deployed on AWS EC2 using Amazon ECR. See the Dockerfile for details.
 
 📁 Project Structure
-text
 PFT-AI-Companion/
 ├── spirometry_v4_pwa.py   # Main application (single file)
 ├── requirements.txt       # Python dependencies
@@ -99,21 +97,22 @@ PFT-AI-Companion/
 ├── .dockerignore          # Files to exclude from Docker
 └── README.md              # This file
 
+
 👩‍⚕️ User Flow
-Choose Practice or Live – coaching voice starts automatically.
+1. Choose Practice or Live – coaching voice starts automatically.
 
-Click Record (start/stop toggle) – blow when you hear "BLAST out!".
+2. Click Record (start/stop toggle) – blow when you hear "BLAST out!".
 
-Score appears instantly – gauge, chart, and summary update.
+3. Score appears instantly – gauge, chart, and summary update.
 
-In Live mode, the app tracks attempts and auto‑finishes after 3 passing blows (≥80%) or 8 total attempts.
+4. In Live mode, the app tracks attempts and auto‑finishes after 3 passing blows (≥80%) or 8 total attempts.
 
 🧠 Version History
-Version	Focus	                  Key Changes
-V1	      Single‑page prototype	Basic audio + pyttsx3 (Windows only).
-V2	      Modular architecture	   Split UI (pages/) and logic (utils/). Added Live mode and therapist.
+Version	  Focus	                  Key Changes
+V1	      Single‑page prototype	  Basic audio + pyttsx3 (Windows only).
+V2	      Modular architecture	  Split UI (pages/) and logic (utils/). Added Live mode and therapist.
 V3	      Unified single page	   Removed pages/ and utils/; switched to gTTS; added Plotly charts; AWS deployment.
-V4	      PWA + latency fix	      Fixed mode‑switch latency, improved UI, added PWA manifest + service worker.
+V4	      PWA + latency fix	     Fixed mode‑switch latency, improved UI, added PWA manifest + service worker.
 
 ⚠️ Limitations
 Microphone requires HTTPS – on public IPs, the mic will not work over HTTP. All other features work fine.
@@ -150,15 +149,14 @@ MIT License – see the LICENSE file for details.
 Built with ❤️ for patient empowerment in respiratory health.
 
 ## Screenshots
+
 ### Unified Interface (V4)
 
 The new single-page layout puts everything – Practice/Live modes, scoring, and history – on one screen.
+<img width="731" height="923" alt="v4_final" src="https://github.com/user-attachments/assets/475090ce-87ae-4642-a07d-c40cf36985b1">
 
-![V4 Unified Interface](https://github.com/user-attachments/assets/52153d90-8c37-4de8-b613-86daaf8a295a)
 
 ### AWS Deployment
 
 The app is containerized with Docker and deployed on AWS EC2.
-
-![AWS Deployment](https://github.com/user-attachments/assets/5763b6d9-50eb-414d-8737-b761232d460f")
-
+<img width="688" height="920" alt="URL18 225 32 182 7864" src="https://github.com/user-attachments/assets/63c85e58-5f47-44e5-813b-63df4505d49e">
