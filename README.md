@@ -1,4 +1,34 @@
-# 🫁 PFT AI Companion (V3)
+# AI Spirometry Companion (V4 – PWA Edition)
+
+**One page. Two modes. All stats.**
+
+A Progressive Web App for practicing Pulmonary Function Tests (PFT) with AI coaching, real‑time scoring, and live/practice modes.
+
+## ✨ Features
+- **Practice & Live modes** – instant switching with zero latency
+- **Instant effort scoring** – explosion, duration, stability
+- **AI voice coaching** – step‑by‑step guidance (gTTS)
+- **PWA installable** – works offline after first load
+- **Unified attempt chart** – track progress across modes
+- **Improved UI** – larger gauges, red clear button, visible dark text
+
+## 🚀 Run locally
+
+```bash
+pip install -r requirements.txt
+python spirometry_v4_pwa.py# 🫁 PFT AI Companion (V3)
+🐳 Run with Docker
+bash
+docker build -t spirometry-pwa .
+docker run -d -p 7864:7863 --name spirometry-app -e PYTHONUNBUFFERED=1 spirometry-pwa
+☁️ AWS Deployment: 
+URL: http://18.225.32.182:7864
+Built for Amazon ECR + EC2. See Dockerfile for details.
+
+📄 License
+Educational purposes only – not a substitute for clinical judgment.
+
+
 
 ### *A Patient‑Centered Spirometry Coaching & Preparation Tool*
 
@@ -13,7 +43,7 @@
 ## 🚀 Live Demo
 
 **Try the app right now:**  
-👉 [http://3.15.171.219:7863](http://3.15.171.219:7863)
+👉 [http://18.225.32.182:7864](http://18.225.32.182:7864)
 
 *(Microphone requires HTTPS – full functionality works on localhost. All other features work flawlessly on AWS).*
 
@@ -21,7 +51,7 @@
 
 ## 📖 Overview
 
-The **PFT AI Companion V3** is a **unified, single‑page application** designed to help patients practice and prepare for Pulmonary Function Tests (Spirometry). It combines **Practice** and **Live Test** modes into one clean interface, using real‑time audio analysis and cloud‑compatible Text‑to‑Speech to guide users through the critical steps of a spirometry maneuver:
+The **PFT AI Companion V4** is a **unified, single‑page application** designed to help patients practice and prepare for Pulmonary Function Tests (Spirometry). It combines **Practice** and **Live Test** modes into one clean interface, using real‑time audio analysis and cloud‑compatible Text‑to‑Speech to guide users through the critical steps of a spirometry maneuver:
 
 1. **🌬️ Breathe In Deeply** – Maximise inhalation.
 2. **💨 Blast Out** – Forceful, explosive exhalation.
@@ -33,7 +63,7 @@ The app evaluates **Explosive Start (amplitude)**, **Duration**, and **Airflow S
 
 ---
 
-## ✨ Key Features (V3)
+## ✨ Key Features (V4)
 
 - **📘 Collapsible "About This App"** – Background, FEV₁, DLCO, PFT, and tips – all hidden until you need them.
 - **🎮 Two Modes in One Page** – *Practice* (unlimited attempts) and *Live* (3‑out‑of‑8 rule, auto‑finishes).
@@ -77,16 +107,16 @@ pip install -r requirements.txt
 
 4. Run the application:
 bash
-python spirometry_v3.py
-Open your browser and go to: http://127.0.0.1:7863.
+python spirometry_v4.py
+Open your browser and go to: http://127.0.0.1:7864.
 
 📁 Project Structure
-V3 is a single‑file application – all logic is contained in spirometry_v3.py.
+V4 is a single‑file application – all logic is contained in spirometry_v4.py.
 The repository also includes:
 
 text
 PFT-AI-Companion/
-├── spirometry_v3.py       # Main application (unified single page)
+├── spirometry_v4.py       # Main application (unified single page)
 ├── requirements.txt       # Python dependencies
 ├── Dockerfile             # Container build instructions
 ├── .dockerignore          # Files to exclude from the Docker image
@@ -102,11 +132,11 @@ Score appears instantly – gauge, bar chart, and detailed summary update.
 Continue – in Live mode, the app tracks attempts and auto‑finishes after 3 passing blows (≥80%) or 8 total attempts.
 
 🧠 The Journey: From V1 to V3
-Version	Focus	Key Change
+Version	Focus	                                Key Change
 V1	Single‑page prototype	Basic audio analysis + pyttsx3 TTS (Windows only).
 V2	Modular architecture	Split UI (pages/) and logic (utils/). Added Live mode and therapist button.
 V3	Unified single page	Removed pages/ and utils/ – everything in one file. Switched to gTTS for cloud compatibility. Added Plotly charts, fixed Y‑axis, and added a passing line. Deployed to AWS.
-
+V4            Fixed latency                          Fixed mode switch latency, improved UI, added PWA capacity. 
 ⚠️ Limitations
 Microphone requires HTTPS – on public IPs, the mic will not work over HTTP. All other features (coaching, scoring, charts) work perfectly.
 
@@ -116,7 +146,7 @@ No clinical validation – this is a coaching tool, not a diagnostic device.
 
 Dependency on internet – gTTS needs an active internet connection to generate voice prompts.
 
-🔮 Future Developments (V4+)
+🔮 Future Developments (V5+)
 HTTPS + SSL – Add a free Let's Encrypt certificate to enable microphone on AWS.
 
 Real‑time Flow‑Volume loop – visualise your breath as you blow.
@@ -146,10 +176,11 @@ Built with ❤️ for patient empowerment in respiratory health.
 
 ## 📸 Screenshots
 
-### 🖥️ Unified Interface (V3)
+### 🖥️ Unified Interface (V4)
 The new single‑page layout puts everything – Practice/Live modes, scoring, and history – on one screen, reducing clutter and making navigation intuitive.
 
 ![<img width="713" height="921" alt="v3overall" src="https://github.com/user-attachments/assets/4b09ba91-b809-4da2-a6a6-80b435ab6644" />
+
 
 ---
 
@@ -164,5 +195,4 @@ The Performance Dashboard includes a colour‑coded gauge, a Plotly bar chart wi
 The app is containerised with Docker and deployed on AWS EC2 – accessible from anywhere.
 
 !<img width="1868" height="1027" alt="AWS-2-App" src="https://github.com/user-attachments/assets/c216ff84-2e4a-4325-911d-ee5e661b0413" />
-
 
