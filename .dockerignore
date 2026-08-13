@@ -10,12 +10,16 @@ env/
 .venv/
 ENV/
 
+
 # Git files
 .git/
 .gitignore
 
 # Environment variables (secrets)
 .env
+*.pem
+*.key
+*.env
 
 # Docker files (don't copy them into the container)
 Dockerfile

@@ -2,197 +2,275 @@
 
 **One page. Two modes. All stats.**
 
-A Progressive Web App for practicing Pulmonary Function Tests (PFT) with AI coaching, real‑time scoring, and live/practice modes.
-
-## ✨ Features
-- **Practice & Live modes** – instant switching with zero latency
-- **Instant effort scoring** – explosion, duration, stability
-- **AI voice coaching** – step‑by‑step guidance (gTTS)
-- **PWA installable** – works offline after first load
-- **Unified attempt chart** – track progress across modes
-- **Improved UI** – larger gauges, red clear button, visible dark text
-
-## 🚀 Run locally
-
-```bash
-pip install -r requirements.txt
-python spirometry_v4_pwa.py# 🫁 PFT AI Companion (V3)
-🐳 Run with Docker
-bash
-docker build -t spirometry-pwa .
-docker run -d -p 7864:7863 --name spirometry-app -e PYTHONUNBUFFERED=1 spirometry-pwa
-☁️ AWS Deployment: 
-URL: http://18.225.32.182:7864
-Built for Amazon ECR + EC2. See Dockerfile for details.
-
-📄 License
-Educational purposes only – not a substitute for clinical judgment.
-
-
-
-### *A Patient‑Centered Spirometry Coaching & Preparation Tool*
-
-[![Python 3.11](https://img.shields.io/badge/Python-3.11-blue.svg)](https://www.python.org/)
-[![Gradio](https://img.shields.io/badge/Gradio-5.0-green.svg)](https://gradio.app/)
-[![Plotly](https://img.shields.io/badge/Plotly-6.0-purple.svg)](https://plotly.com/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![AWS](https://img.shields.io/badge/Live%20Demo-AWS-orange.svg)](http://3.15.171.219:7863)
+A Progressive Web App for practicing Pulmonary Function Tests (PFT) with AI coaching, real-time scoring, and Practice/Live modes.
 
 ---
 
 ## 🚀 Live Demo
 
-**Try the app right now:**  
-👉 [http://18.225.32.182:7864](http://18.225.32.182:7864)
+👉 [Live Demo](http://18.225.32.182:7864)
 
-*(Microphone requires HTTPS – full functionality works on localhost. All other features work flawlessly on AWS).*
+> ⚠️ **Deployment note:** The current AWS deployment uses HTTP on a public EC2 IP address. Modern browsers require a secure origin (HTTPS) for full microphone and Progressive Web App functionality. Core coaching, scoring, visualization, and educational features remain available, but PWA installation and microphone behavior may vary by browser and device.
 
 ---
 
 ## 📖 Overview
 
-The **PFT AI Companion V4** is a **unified, single‑page application** designed to help patients practice and prepare for Pulmonary Function Tests (Spirometry). It combines **Practice** and **Live Test** modes into one clean interface, using real‑time audio analysis and cloud‑compatible Text‑to‑Speech to guide users through the critical steps of a spirometry maneuver:
+The **PFT AI Companion V4** is a unified, single-page application designed to help users practice and prepare for spirometry.
 
-1. **🌬️ Breathe In Deeply** – Maximise inhalation.
-2. **💨 Blast Out** – Forceful, explosive exhalation.
-3. **⏱️ Sustain** – Keep blowing for at least 6 seconds.
+It combines **Practice** and **Live Test** modes into one interface, using real-time audio analysis and cloud-based Text-to-Speech (TTS) to guide users through the critical steps of a forced expiratory maneuver:
 
-The app evaluates **Explosive Start (amplitude)**, **Duration**, and **Airflow Stability**, providing immediate, personalised coaching feedback and a **colour‑coded bar chart** with a passing line at 80%.
+1. 🌬️ **Breathe In Deeply** – maximize inhalation.
+2. 💨 **Blast Out** – perform a forceful, explosive exhalation.
+3. ⏱️ **Sustain** – continue blowing for at least 6 seconds.
 
-**⚠️ Clinical Disclaimer:** This tool is for **educational and preparation purposes only**. It does **not** diagnose lung conditions or replace professional clinical judgment.
+The application evaluates:
+
+* **Explosive Start (amplitude)**
+* **Duration**
+* **Airflow Stability**
+
+It then provides immediate coaching feedback and a color-coded performance score with a passing threshold of **80%**.
+
+> ⚠️ **Clinical Disclaimer:** This application is for educational and preparation purposes only. It does not diagnose pulmonary disease, perform clinical spirometry, or replace professional clinical judgment.
 
 ---
 
-## ✨ Key Features (V4)
+## ✨ Key Features
 
-- **📘 Collapsible "About This App"** – Background, FEV₁, DLCO, PFT, and tips – all hidden until you need them.
-- **🎮 Two Modes in One Page** – *Practice* (unlimited attempts) and *Live* (3‑out‑of‑8 rule, auto‑finishes).
-- **🎙️ Real‑Time Audio Analysis** – Uses your microphone to measure breath effort, duration, and stability.
-- **🗣️ Cloud‑Ready Voice Prompts** – Switched from `pyttsx3` to `gTTS` – works on Windows, Linux, and AWS.
-- **📊 Interactive Bar Chart** – Built with Plotly: fixed 0–100 Y‑axis, colour‑coded bars (Practice 🟠 / Live 🟣), and a dashed **Pass** line at 80%.
-- **📈 Attempt History & Trends** – Track your progress with a summary card and a numbered trend list (UP/DOWN/SAME arrows).
-- **🔄 Session Controls** – Reset Live session or clear all history with one click.
-- **☁️ Dockerised & Deployed** – Runs on AWS EC2 behind a Docker container.
+* 📘 **Collapsible About section** – background information, FEV₁, DLCO, PFT concepts, and preparation tips.
+* 🎮 **Two modes in one page** – Practice mode for unlimited practice and Live mode for structured attempts.
+* 🎙️ **Real-time audio analysis** – evaluates breath effort, duration, and stability.
+* 🗣️ **Cloud-ready voice prompts** – uses `gTTS` for cross-platform text-to-speech.
+* 📊 **Interactive Plotly visualization** – fixed 0–100 Y-axis, color-coded Practice/Live results, and an 80% passing line.
+* 📈 **Attempt history and trends** – tracks scores and displays UP/DOWN/SAME trends.
+* 🧑‍⚕️ **Respiratory Therapist coaching interface** – provides requested therapist guidance and coaching feedback.
+* 🔄 **Session controls** – reset the Live session and clear attempt history.
+* ☁️ **Dockerized deployment** – deployed to AWS EC2 using Docker and Amazon ECR.
+* 📱 **PWA-ready architecture** – includes PWA manifest/service-worker support, with full installation functionality dependent on secure-origin requirements.
 
 ---
 
 ## 🛠️ Tech Stack
 
-| **Category** | **Technologies** |
-| :--- | :--- |
-| **Frontend/UI** | Gradio 5.0 |
-| **Audio Processing** | SciPy, NumPy |
-| **Text‑to‑Speech** | gTTS (Google Text‑to‑Speech) |
-| **Charts** | Plotly, Pandas |
-| **Backend** | Pure Python |
-| **Deployment** | Docker, AWS ECR, AWS EC2 |
+| Category                   | Technologies                     |
+| :------------------------- | :------------------------------- |
+| **Frontend / UI**          | Gradio                           |
+| **Audio Processing**       | SciPy, NumPy                     |
+| **Text-to-Speech**         | gTTS                             |
+| **Charts / Visualization** | Plotly, Pandas                   |
+| **Backend**                | Python                           |
+| **Containerization**       | Docker                           |
+| **Cloud Deployment**       | AWS ECR, AWS EC2                 |
+| **PWA**                    | Web App Manifest, Service Worker |
 
 ---
 
-## 🚀 Installation & Local Setup
+## 🚀 Run Locally
 
 ### Prerequisites
-- Python 3.11+ installed.
-- Working microphone.
 
-### Steps
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/yujass-DAlab/PFT-AI-Companion.git
-   cd PFT-AI-Companion
-   
-2. Install dependencies:
-bash
+* Python 3.11+
+* Working microphone
+* Internet connection for gTTS voice generation
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/yujass-DAlab/PFT-AI-Companion.git
+
+# Enter the project directory
+cd PFT-AI-Companion
+
+# Install dependencies
 pip install -r requirements.txt
 
-4. Run the application:
-bash
-python spirometry_v4.py
-Open your browser and go to: http://127.0.0.1:7864.
+# Run the application
+python spirometry_v4_pwa.py
+```
 
-📁 Project Structure
-V4 is a single‑file application – all logic is contained in spirometry_v4.py.
-The repository also includes:
+Open your browser at:
 
-text
-PFT-AI-Companion/
-├── spirometry_v4.py       # Main application (unified single page)
-├── requirements.txt       # Python dependencies
-├── Dockerfile             # Container build instructions
-├── .dockerignore          # Files to exclude from the Docker image
-└── README.md              # This file
+```text
+http://127.0.0.1:7864
+```
 
-👩‍⚕️ User Flow
-Choose a mode (Practice or Live) – the coach voice plays automatically.
+---
 
-Click the Record button (start/stop toggle) – blow when you hear "BLAST out!".
+## 🐳 Run with Docker
 
-Score appears instantly – gauge, bar chart, and detailed summary update.
+Build the image:
 
-Continue – in Live mode, the app tracks attempts and auto‑finishes after 3 passing blows (≥80%) or 8 total attempts.
+```bash
+docker build -t spirometry-pwa .
+```
 
-🧠 The Journey: From V1 to V3
-Version	Focus	                                Key Change
-V1	Single‑page prototype	Basic audio analysis + pyttsx3 TTS (Windows only).
-V2	Modular architecture	Split UI (pages/) and logic (utils/). Added Live mode and therapist button.
-V3	Unified single page	Removed pages/ and utils/ – everything in one file. Switched to gTTS for cloud compatibility. Added Plotly charts, fixed Y‑axis, and added a passing line. Deployed to AWS.
-V4            Fixed latency                          Fixed mode switch latency, improved UI, added PWA capacity. 
-⚠️ Limitations
-Microphone requires HTTPS – on public IPs, the mic will not work over HTTP. All other features (coaching, scoring, charts) work perfectly.
+Run the container:
 
-Surrogate metrics only – the app measures audio amplitude and duration, not calibrated flow/volume (FEV₁, FVC).
+```bash
+docker run -d \
+  -p 7864:7863 \
+  --name spirometry-app \
+  -e PYTHONUNBUFFERED=1 \
+  spirometry-pwa
+```
 
-No clinical validation – this is a coaching tool, not a diagnostic device.
+The application can then be accessed through the mapped port.
 
-Dependency on internet – gTTS needs an active internet connection to generate voice prompts.
+---
 
-🔮 Future Developments (V5+)
-HTTPS + SSL – Add a free Let's Encrypt certificate to enable microphone on AWS.
+## ☁️ AWS Deployment
 
-Real‑time Flow‑Volume loop – visualise your breath as you blow.
+The application is containerized with Docker and deployed on **AWS EC2** using **Amazon ECR**.
 
-Session history storage – save attempts to a database and generate PDF reports.
+### Current deployment
 
-Multi‑language support – Spanish, Mandarin, etc.
+**Live URL:** http://18.225.32.182:7864
 
-🙏 Acknowledgments
-This project was developed with technical guidance from AI language models, including ChatGPT and DeepSeek. Their contributions assisted in code structuring, debugging, modular design, and patient‑friendly prompt engineering.
+The current deployment intentionally uses a public HTTP endpoint rather than HTTPS.
 
-Special thanks to the open‑source community for:
+### Current HTTPS limitation
 
-Gradio – for the intuitive web UI framework.
+Modern browsers restrict certain capabilities, including microphone access and full PWA installation behavior, when an application is served from an insecure public origin.
 
-gTTS – for cloud‑compatible Text‑to‑Speech.
+As a result:
 
-Plotly – for beautiful, interactive charts.
+* The application may appear as a home-screen shortcut rather than a fully featured installed PWA.
+* Microphone access may be restricted on some mobile and desktop browsers.
+* Rich PWA installation UI may not be available.
+* Offline/install behavior may vary by platform.
 
-SciPy & NumPy – for audio signal processing.
+These are deployment/security-context limitations rather than limitations of the application's core coaching and scoring logic.
 
-📄 License
-This project is licensed under the MIT License – see the LICENSE file for details.
+### Future deployment improvement
+
+A future version can add:
+
+* HTTPS
+* Custom domain
+* SSL/TLS certificate
+* Full browser microphone support
+* Full PWA installation support
+
+---
+
+## 📱 PWA Status
+
+V4 includes the foundation for Progressive Web App functionality, including a web app manifest and service-worker architecture.
+
+However, the current AWS deployment is served over **HTTP**, so browsers may not treat it as a fully installable PWA.
+
+The current implementation should therefore be considered **PWA-ready but not fully production-installed as a PWA on the public AWS endpoint**.
+
+---
+
+## 👩‍⚕️ User Flow
+
+1. **Choose Practice or Live mode** – the application begins the appropriate coaching sequence.
+2. **Use the Record control** – start/stop the recording and perform the maneuver when prompted.
+3. **Receive immediate feedback** – the application calculates the performance score and updates the gauge, chart, and session history.
+4. **Continue practicing or complete the Live session** – Live mode tracks attempts and applies the configured passing/session rules.
+
+---
+
+## 📊 Scoring Concept
+
+The application uses surrogate audio-derived metrics rather than calibrated clinical spirometry measurements.
+
+The performance score considers:
+
+* **Explosive Start** – strength/amplitude of the initial blow.
+* **Duration** – ability to sustain the maneuver.
+* **Airflow Stability** – consistency of the detected respiratory signal.
+
+An **80% threshold** is used as the application's coaching/pass threshold.
+
+> This score should not be interpreted as a clinical spirometry result or an ATS/ERS diagnostic measurement.
+
+---
+
+## 🧠 Version History
+
+| Version | Focus                         | Key Changes                                                                                                                                          |
+| :------ | :---------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **V1**  | Single-page prototype         | Basic audio analysis and `pyttsx3` voice prompts on Windows.                                                                                         |
+| **V2**  | Modular architecture          | Separated UI and logic; added Live mode and therapist functionality.                                                                                 |
+| **V3**  | Unified single page           | Removed separate pages/utils structure; switched to gTTS; added Plotly charts and AWS deployment.                                                    |
+| **V4**  | PWA + latency/UI improvements | Fixed mode-switch latency, improved audio-prompt behavior, refined UI, added PWA manifest/service-worker support, and improved AWS-ready deployment. |
+
+---
+
+## ⚠️ Limitations
+
+* **HTTPS required for full browser microphone/PWA support** on public deployments.
+* **Surrogate metrics:** the application measures audio-derived amplitude, duration, and stability rather than calibrated flow and volume.
+* **No clinical validation:** this is an educational coaching tool and not a diagnostic device.
+* **No FEV₁/FVC measurement:** the application does not replace clinical spirometry equipment.
+* **Internet required for gTTS:** cloud-based voice prompts require an active network connection.
+* **Browser/device differences:** microphone and PWA behavior may vary across browsers and operating systems.
+
+---
+
+## 🔮 Future Plans (V5+)
+
+* 🔐 **HTTPS + SSL** – enable secure-origin microphone and full PWA functionality.
+* 🌐 **Custom domain** – provide a more professional public deployment.
+* 🌬️ **Real-time flow-volume loop** – add more clinically recognizable respiratory visualization.
+* 💾 **Session history storage** – persist attempts and generate downloadable reports.
+* 📄 **PDF reporting** – generate structured practice/session summaries.
+* 🌎 **Multi-language support** – Spanish, Mandarin, and additional languages.
+* 📱 **Enhanced mobile experience** – optimize the interface for smaller screens and installed PWA environments.
+
+---
+
+## 🙏 Acknowledgments
+
+This project was developed with technical guidance from AI language models, including **ChatGPT** and **DeepSeek**, together with the open-source software community.
+
+Major technologies used include:
+
+* **Gradio** – web application framework
+* **gTTS** – cloud-based Text-to-Speech
+* **Plotly** – interactive visualization
+* **SciPy** – scientific/audio signal processing
+* **NumPy** – numerical computing
+* **Pandas** – data processing
+* **Docker** – application containerization
+* **AWS ECR / EC2** – container registry and cloud deployment
+
+---
+
+## 📄 License
+
+MIT License – see the `LICENSE` file for details.
 
 Built with ❤️ for patient empowerment in respiratory health.
+
 ---
 
 ## 📸 Screenshots
 
-### 🖥️ Unified Interface (V4)
-The new single‑page layout puts everything – Practice/Live modes, scoring, and history – on one screen, reducing clutter and making navigation intuitive.
+### Unified Interface (V4)
 
-![<img width="713" height="921" alt="v3overall" src="https://github.com/user-attachments/assets/4b09ba91-b809-4da2-a6a6-80b435ab6644" />
+The new single-page layout puts Practice/Live modes, scoring, coaching, and history into one unified interface.
 
+<img width="731" height="923" alt="V4 Unified Interface" src="https://github.com/user-attachments/assets/d0d1d8cb-4334-4f00-9a17-086892ff4784">
+
+### AWS Deployment
+
+The application is containerized with Docker and deployed on AWS EC2.
+
+<img width="688" height="920" alt="AWS Deployment" src="https://github.com/user-attachments/assets/fd949ab3-0ee3-46c7-88eb-03bd1b7f6ce2">
 
 ---
 
-### 📊 Interactive Dashboard
-The Performance Dashboard includes a colour‑coded gauge, a Plotly bar chart with a fixed 0–100 Y‑axis, and a passing line at 80%.
+## 🏁 Project Status
 
-![<img width="671" height="764" alt="v3blank" src="https://github.com/user-attachments/assets/5130c6a8-f7e4-4315-971c-a439d8c62365" />
+**V4 – PWA Edition**
 
----
+The application is currently deployed on AWS EC2 and demonstrates an end-to-end healthcare AI prototype incorporating:
 
-### ☁️ AWS Deployment
-The app is containerised with Docker and deployed on AWS EC2 – accessible from anywhere.
+**Python → Audio Processing → AI-Assisted Coaching → TTS → Interactive Visualization → Docker → AWS**
 
-!<img width="1868" height="1027" alt="AWS-2-App" src="https://github.com/user-attachments/assets/c216ff84-2e4a-4325-911d-ee5e661b0413" />
-
+The current V4 release focuses on demonstrating the complete workflow and a practical patient-facing respiratory coaching experience while clearly identifying the limitations of surrogate respiratory metrics and HTTP-based deployment.
