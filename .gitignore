@@ -1,26 +1,69 @@
+# Bytecode / cache
 __pycache__/
 *.pyc
+*.pyo
 *.log
 *.tmp
 temp/
-app_v2.py
-app_v31.py
-app_v32.py
-spirometry_v33.py
-spirometry_v34.py
-spirometry_v35.py
-spirometry_v36.py
-spirometry_v37.py
-spirometry_v38.py
-spirometry_v39.py
-spirometry_v40.py
-spirometry_v41.py
-spirometry_v42.py
-spirometry_v3_retired.py
-*.png
+.pytest_cache/
+
+# Old / retired app files (if any)
 app_v*.py
 spirometry_v*.py
 !spirometry_v3.py
+# Bytecode / cache
+__pycache__/
+*.pyc
+*.pyo
+*.log
+*.tmp
+temp/
+.pytest_cache/
+
+# Old / retired app files (if any)
 app_v*.py
 spirometry_v*.py
 !spirometry_v3.py
+!spirometry_v4_pwa.py
+
+# Unused modular folders (kept locally, ignored from Git)
+pages/
+utils/
+
+# Secrets & keys (future safety)
+*.pem
+*.key
+*.env
+*.tknFinal.txt
+SlackOAuthToken.txt
+
+# IDE / OS junk
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Docker / build artifacts (optional – you already have .dockerignore)
+*.tar
+*.gz
+
+# Unused modular folders (kept locally, ignored from Git)
+pages/
+utils/
+
+# Secrets & keys (future safety)
+*.pem
+*.key
+*.env
+*.tknFinal.txt
+SlackOAuthToken.txt
+
+# IDE / OS junk
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Docker / build artifacts (optional – you already have .dockerignore)
+*.tar
+*.gz
